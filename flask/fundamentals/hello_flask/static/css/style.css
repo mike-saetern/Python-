@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+h1{
+    background-color: red;
+}
+h3{
+    color: blue;
+}
