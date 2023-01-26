@@ -1,0 +1,13 @@
+h1{
+    color: red;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.btn{
+    margin: 20px;
+}
