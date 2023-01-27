@@ -1,0 +1,27 @@
+SELECT * FROM dojos;
+-- add 3 names into dojo
+INSERT INTO dojos(name)
+VALUES('Classic'), ('Modern'), ('Future');
+-- delete id 2 
+DELETE FROM dojos
+WHERE id between 1 and 3; 
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('John','Wayne',55,7),('Dwayne','Carter',25,7),('Tiffany','Blue',19,7);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('Jon','Jones',50,8),('Dwayne','Johnson',28,8),('Tiffany','Green',21,8);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('Jon','Wick',45,9),('Dwayne','Buford',29,9),('Tiffany','Pink',20,9);
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 7;
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+	WHERE dojos.id = 9;
+    
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);

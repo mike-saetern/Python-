@@ -56,23 +56,23 @@
 #will print 100, then return 10 and end function.
 
 #9
-def number_of_days_in_a_week_silicon_or_triangle_sides(b,c):
-    if b<c:
-        return 7
-    else:
-        return 14
-    return 3
-print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3))
-print(number_of_days_in_a_week_silicon_or_triangle_sides(5,3))
-print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3) + number_of_days_in_a_week_silicon_or_triangle_sides(5,3))
-
+# def number_of_days_in_a_week_silicon_or_triangle_sides(b,c):
+#     if b<c:
+#         return 7
+#     else:
+#         return 14
+#     return 3
+# print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3))
+# print(number_of_days_in_a_week_silicon_or_triangle_sides(5,3))
+# print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3) + number_of_days_in_a_week_silicon_or_triangle_sides(5,3))
+#returns 7, returns 14, returns 21
 
 #10
 # def addition(b,c):
 #     return b+c
 #     return 10
 # print(addition(3,5))
-
+# prints 8
 
 #11
 # b = 500
@@ -83,7 +83,7 @@ print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3) + number_of_days_i
 # print(b)
 # foobar()
 # print(b)
-
+# print 500, 500, 300, 500
 
 #12
 # b = 500
@@ -95,7 +95,7 @@ print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3) + number_of_days_i
 # print(b)
 # foobar()
 # print(b)
-
+#print 500, 500, 300, 500
 
 #13
 # b = 500
@@ -107,7 +107,7 @@ print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3) + number_of_days_i
 # print(b)
 # b=foobar()
 # print(b)
-
+#print 500, 500, 300, 300
 
 #14
 # def foo():
@@ -117,16 +117,17 @@ print(number_of_days_in_a_week_silicon_or_triangle_sides(2,3) + number_of_days_i
 # def bar():
 #     print(3)
 # foo()
+#print 1, 3, 2
 
-
-#15
-# def foo():
-#     print(1)
-#     x = bar()
-#     print(x)
-#     return 10
-# def bar():
-#     print(3)
-#     return 5
-# y = foo()
-# print(y)
+15
+def foo():
+    print(1)
+    x = bar()
+    print(x)
+    return 10
+def bar():
+    print(3)
+    return 5
+y = foo()
+print(y)
+#print 1, 3, 5, 10
