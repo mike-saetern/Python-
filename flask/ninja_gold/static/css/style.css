@@ -1,0 +1,13 @@
+h3{
+    margin-top: 20px;
+}
+p{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.col{
+    border: 1px black solid;
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+}

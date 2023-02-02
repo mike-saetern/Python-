@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>ninja gold</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <div class="d-flex">
+                <div>
+                    <h2>Your Gold</h2>
+                </div>
+                <div style="margin-left: 30px; width: 100px; text-align: center;">
+                    <h2>{{ session.num }}</h2>
+                </div>
+            </div>
+        </nav>
+        <div class="row align-items-center">
+            <div class="col">
+                <form action="/process_money" method="post">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <input type="hidden" name="building" value="farm">
+                <input class="btn btn-primary" type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="col">
+                <form action="/process_money" method="post">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <input type="hidden" name="building" value="cave">
+                <input class="btn btn-primary" type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="col">
+                <form action="/process_money" method="post">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <input type="hidden" name="building" value="house">
+                <input class="btn btn-primary" type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="col">
+                <form action="/process_money" method="post">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <input type="hidden" name="building" value="casino">
+                <input class="btn btn-primary" type="submit" value="Find Gold">
+                </form>
+            </div>    
+        </div>
+        <div class="overflow-auto" style="border:solid 1px black; height: 180px;">
+            <ul>
+            {% for result in session['outcomes']|reverse %}
+            <li><a href="#" style="color:{{result['color']}}">{{result['message']}}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        <form action="/clear_session">
+        <button>Reset</button>
+        </form>
+    </div>
+</body>
+</html>
