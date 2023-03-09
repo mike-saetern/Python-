@@ -9,9 +9,15 @@ def index():
 
 @app.route('/create_user', methods=['POST'])
 def create_user():
-    print(request.form)
     User.save(request.form)
-    return redirect('/')
+    return redirect('/show_user')
+    # return redirect(f'/user/show/{id}' )
+
+@app.route('/show_user')
+def show_user():
+    id=request.form['id']
+    user=User.get_one(id)
+    return render_template('read_one.html', one_user=user)
 
 @app.route('/new_user')
 def new_user():
