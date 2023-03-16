@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome {{user.first_name}}</h1>
+        <div class="d-flex justify-content-between">
+            <h4>All recipes posted:</h4>
+            <div>
+                <a href="/create">Create</a> <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Under 30 min</th>
+                <th scope="col">Posted By</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for one in recipes %} <!--recipes is variable from controller-->
+              <tr>
+                <td>{{ one.name}}</td>
+                {% if one.under_30min == 1 %}
+                  <td>Yes</td>
+                {% else %}
+                  <td>No</td>
+                {% endif %}
+                <td>{{one.user.first_name}}</td>
+                <td><a href="/recipes/{{one.id}}">view recipe</a> | 
+                {% if one.user.id == user.id: %}
+                  <a href="/edit/{{one.id}}">edit</a> | <a href="/delete/{{one.id}}">delete</a></td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
